@@ -14,13 +14,16 @@
     <div class="container">
         <header class="header">
             <h1>Teacher Dashboard</h1>
+            <h2 id="greeting" class="dynamic-greeting"></h2>
+            
         </header>
         
         <section class="info-section">
             <div class="card">
                 <h2>Teacher Details</h2>
-                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Name:</strong>Ramesh</p>
                 <p><strong>Teacher ID:</strong> T12345</p>
+                <p><strong>Teacher DOB:</strong> 21/05/1999</p>
             </div>
             <div class="card actions">
                 <button class="btn">Manage Classes</button>
@@ -42,6 +45,22 @@
                 <div class="dum-container">
                     <h2>Weekly Progress</h2>
                     <canvas id="progressChart"></canvas>
+                </div>
+
+                <div class="calendar-container">
+                    <div class="date-picker">
+                        <label for="calendar-date">Select Date:</label>
+                        <input type="date" id="calendar-date" />
+                    </div>
+                    <div class="notes-section">
+                        <label for="daily-notes">Notes:</label>
+                        <textarea id="daily-notes" rows="5" placeholder="Enter your notes here..."></textarea>
+                        <button id="save-notes-btn">Save Notes</button>
+                    </div>
+                    <div class="saved-notes">
+                        <h3>Saved Notes:</h3>
+                        <ul id="notes-list"></ul>
+                    </div>
                 </div>
 
     <script>
@@ -194,6 +213,7 @@
 
 
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

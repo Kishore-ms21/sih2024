@@ -16,7 +16,7 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 2rem auto;
     padding: 1rem;
 }
@@ -94,16 +94,18 @@ body {
 .performance-circle {
     display: inline-block;
     position: relative;
+    padding: 30px;
 }
 
 .circle {
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     background: conic-gradient(#6c5ce7 78%, #dfe6e9 0);
     border-radius: 50%;
     position: relative;
     margin: 0 auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
 }
 
 .circle span {
@@ -170,3 +172,5 @@ table tr:hover {
     background: #ffeaa7;
     transition: all 0.3s ease;
 }
+
+

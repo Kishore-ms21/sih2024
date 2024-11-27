@@ -23,3 +23,44 @@ range.addEventListener("input", (event) => {
 
 
 
+const now = new Date();
+const hours = now.getHours();
+let greeting = "";
+
+if (hours < 12) greeting = "Good Morning, Teacher!";
+else if (hours < 18) greeting = "Good Afternoon, Teacher!";
+else greeting = "Good Evening, Teacher!";
+
+document.getElementById("greeting").innerText = greeting;
+
+
+
+
+
+
+document.getElementById("save-notes-btn").addEventListener("click", function () {
+  const date = document.getElementById("calendar-date").value;
+  const notes = document.getElementById("daily-notes").value;
+  const notesList = document.getElementById("notes-list");
+
+  if (!date || !notes) {
+      alert("Please select a date and enter your notes.");
+      return;
+  }
+
+  // Create a new list item
+  const listItem = document.createElement("li");
+  listItem.innerHTML = `<strong>${date}</strong>: ${notes}`;
+  notesList.appendChild(listItem);
+
+  // Clear inputs
+  document.getElementById("calendar-date").value = "";
+  document.getElementById("daily-notes").value = "";
+});
+
+
+
+
+
+
+

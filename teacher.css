@@ -14,7 +14,7 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 2rem auto;
     padding: 1rem;
 }
@@ -110,6 +110,7 @@ canvas {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    flex-wrap: wrap;
     margin: 2rem 0;
 }
 
@@ -205,3 +206,95 @@ table tr:hover {
     padding: 50px 30px 30px 0;
 }
 
+
+
+
+
+
+
+.daily-calendar {
+    background: #ffffff;
+    border: 2px solid #6c5ce7;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.daily-calendar h2 {
+    text-align: center;
+    color: #6c5ce7;
+    margin-bottom: 10px;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.date-picker,
+.notes-section {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #2d3436;
+}
+
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dfe6e9;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    resize: none;
+}
+
+#save-notes-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#save-notes-btn:hover {
+    background: #4a47a3;
+}
+
+.saved-notes {
+    margin-top: 15px;
+}
+
+.saved-notes h3 {
+    color: #2d3436;
+}
+
+#notes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#notes-list li {
+    background: #f3f9fd;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #dfe6e9;
+    border-radius: 5px;
+}
