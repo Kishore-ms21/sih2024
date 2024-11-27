@@ -18,7 +18,7 @@ const circle = document.querySelector(".circle");
 range.addEventListener("input", (event) => {
   const value = event.target.value;
   circleScore.textContent = `${value}%`;
-  circle.style.background = `conic-gradient(#112D4E ${value}%, #d7dadd ${value}%)`;
+  circle.style.background = `conic-gradient(#6c5ce7 ${value}%, #d7dadd ${value}%)`;
 });
 
 

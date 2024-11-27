@@ -3,94 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClassOfOne</title>
+    <title>Classroom Monitoring System</title>
     <link rel="stylesheet" href="institution.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bree+Serif&family=Lilita+One&family=Roboto+Slab:wght@100..900&family=Rowdies:wght@300;400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="institution-container">
-        <h1 class="institution-head">Institution Login</h1>
-        <div class="institution-operations">
-            <div class="institution-details">
-                <h4 class="institution-content">College Name   :  <em>xxxxx</em></h4>
-                <h4 class="institution-content">College- Id :  <em>1233334</em></h4>
+    <div class="container">
+        <header class="header">
+            <h1>Classroom Monitoring System</h1>
+        </header>
+        
+        <section class="info-section">
+            <div class="card">
+                <h2>Institution Details</h2>
+                <p><strong>College Name:</strong> ABC Government College</p>
+                <p><strong>College ID:</strong> 1233334</p>
             </div>
-            <div class="institution-details2">
-                <button class="btn" >Add Staff</button>
-                <button class="btn" >Slot</button>
-                <button class="btn" >ennamo</button>
+            <div class="card actions">
+                <button class="btn">Add Staff</button>
+                <button class="btn">Manage Slots</button>
+                <button class="btn">View Reports</button>
             </div>
-        </div>
-
-        <div class="institution-mainContent">
-            <div class="progress-circle">
+        </section>
+        
+        <section class="performance-section">
+            <div class="performance-circle">
                 <div class="circle">
-                  <div class="mask full" id="mask-full"></div>
-                  <div class="mask half" id="mask-half">
-                    <div class="fill" id="fill"></div>
-                  </div>
-                  <div class="inside-circle">
-                    <span id="circle-score">0%</span>
-                  </div>
+                    <span id="circle-score">78%</span>
                 </div>
-                <input type="range" id="range" min="0" max="100" value="0">
-                <h1 class="institution-head">Institution Performance</h1>
+                <input type="range" id="range" min="0" max="100" value="78">
             </div>
-
-
-            <div class="schedule-container">
-                <table class="schedule-table">
-                  <thead>
+            <h2>Institution Performance</h2>
+        </section>
+        
+        <section class="table-section">
+            <h2>Staff Performance</h2>
+            <table>
+                <thead>
                     <tr>
-                      <th>Staff Name</th>
-                      <th>Staff ID</th>
-                      <th>Performance %</th>
+                        <th>Staff Name</th>
+                        <th>Staff ID</th>
+                        <th>Performance %</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                     <tr>
-                      <td>Santhi</td>
-                      <td>1276</td>
-                      <td>89%</td>
-                    </tr>
-                    <tr>
-                      <td>Sabari</td>
-                      <td>2198</td>
-                      <td>54%</td>
+                        <td>Santhi</td>
+                        <td>1276</td>
+                        <td>89%</td>
                     </tr>
                     <tr>
-                      <td>Palani</td>
-                      <td>3245</td>
-                      <td>76%</td>
+                        <td>Sabari</td>
+                        <td>2198</td>
+                        <td>54%</td>
                     </tr>
                     <tr>
-                      <td>Ramu</td>
-                      <td>2330</td>
-                      <td>45%</td>
+                        <td>Palani</td>
+                        <td>3245</td>
+                        <td>76%</td>
                     </tr>
                     <tr>
-                      <td>Ganesh</td>
-                      <td>3411</td>
-                      <td>88%</td>
+                        <td>Ramu</td>
+                        <td>2330</td>
+                        <td>45%</td>
                     </tr>
                     <tr>
-                      <td>Magesh</td>
-                      <td>4323</td>
-                      <td>9%</td>
+                        <td>Ganesh</td>
+                        <td>3411</td>
+                        <td>88%</td>
                     </tr>
                     <tr>
-                      <td>Aakash</td>
-                      <td> 5434</td>
-                      <td>98%</td>
+                        <td>Magesh</td>
+                        <td>4323</td>
+                        <td>9%</td>
                     </tr>
-                  </tbody>
-                </table>
-            </div>
-
-        </div>
-
+                    <tr>
+                        <td>Aakash</td>
+                        <td>5434</td>
+                        <td>98%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </div>
     <script src="script.js"></script>
 </body>

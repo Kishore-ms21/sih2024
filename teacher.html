@@ -3,133 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClassOfOne</title>
+    <title>Teacher Dashboard - Classroom Monitoring</title>
     <link rel="stylesheet" href="teacher.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bree+Serif&family=Lilita+One&family=Roboto+Slab:wght@100..900&family=Rowdies:wght@300;400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
 <body>
-    <div class="teacher-container">
-        <h1 class="teacher-head">Staff Performance</h1>
-        <div class="teacher-operations">
-            <div class="teacher-details">
-                <h4 class="teacher-content">Name   :  <em>xxxxx</em></h4>
-                <h4 class="teacher-content">Emp Id :  <em>1233334</em></h4>
+    <div class="container">
+        <header class="header">
+            <h1>Teacher Dashboard</h1>
+        </header>
+        
+        <section class="info-section">
+            <div class="card">
+                <h2>Teacher Details</h2>
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Teacher ID:</strong> T12345</p>
             </div>
-            <div class="teacher-details2">
-                <h4 class="teacher-content">Subject   : <input type="text" class="input-details" required> </h4>
-                <h4 class="teacher-content">class :  <input type="text" class="input-details" required></h4>
-                <form action="institution.html" method="get"><button class="btn" >Submit</button></form>
+            <div class="card actions">
+                <button class="btn">Manage Classes</button>
+                <button class="btn">View Schedule</button>
+                <button class="btn">View Reports</button>
             </div>
-        </div>
-        <div class="teacher-mainContent">
-            <!-- <div class="speedometer-container">
-                <div class="speedometer">
-                  <div class="circle"></div>
-                  <div class="needle" id="needle"></div>
-                  <div class="score">
-                    <span id="score">0</span>
-                  </div>
-                </div>
-                <div class="slider-container">
-                  <input type="range" id="range" min="0" max="100" value="0">
-                </div>
-            </div>  -->
+        </section>
 
-            <div class="progress-circle">
+        <section class="performance-section">
+            <div class="performance-circle">
+                <h2>Staff Performance</h2>
                 <div class="circle">
-                  <div class="mask full" id="mask-full"></div>
-                  <div class="mask half" id="mask-half">
-                    <div class="fill" id="fill"></div>
-                  </div>
-                  <div class="inside-circle">
-                    <span id="circle-score">0%</span>
-                  </div>
+                    <span id="circle-score">78%</span>
                 </div>
-                <input type="range" id="range" min="0" max="100" value="0">
-                <h1 class="teacher-head">Performance</h1>
+                <input type="range" id="range" min="0" max="100" value="78">
+                
             </div>
+                
+                <div class="dum-container">
+                    <h2>Weekly Progress</h2>
+                    <canvas id="progressChart"></canvas>
+                </div>
 
+    <script>
+        const data = {
+            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            datasets: [{
+                label: 'Progress (%)',
+                data: [65, 70, 85, 90, 80, 95, 60], 
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
+                hoverBorderColor: 'rgba(75, 192, 192, 1)',
+            }]
+        };
+
+        // Chart configuration
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100, // Progress is percentage, so max value is 100
+                    },
+                },
+                plugins: {
+                    legend: {
+                        display: false, // Hide the legend
+                    },
+                },
+            },
+        };
+
+        // Render the chart
+        const progressChart = new Chart(document.getElementById('progressChart'), config);
+    </script>
+        </section>
+
+
+        <section class="schedule-section">
+            <h2>Class Schedule</h2>
             <div class="schedule-container">
                 <table class="schedule-table">
-                  <thead>
-                    <tr>
-                      <th>Time/Day</th>
-                      <th>Monday</th>
-                      <th>Tuesday</th>
-                      <th>Wednesday</th>
-                      <th>Thursday</th>
-                      <th>Friday</th>
-                      <th>Saturday</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Period 1</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Period 2</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Period 3</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>  </td>
-                    </tr>
-                    <tr>
-                      <td>Period 4</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Period 5</td>
-                      <td></td>
-                      <td>  </td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Period 6</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>  </td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>Period 7</td>
-                      <td>  </td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
+                    <thead>
+                        <tr>
+                            <th>Time/Day</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Period 1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Period 2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Period 3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Period 4</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Period 5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Period 6</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Period 7</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
+        </section>
+
+        <section class="performance-section2">
+            <h2 class="subject">Subject Performance</h2>
             <div class="schedule-container2">
                 <table class="schedule-table schedule-table2">
                     <tr>
@@ -148,9 +188,11 @@
                         <td>Social</td>
                         <td>44%</td>
                     </tr>
-            </table>
+                </table>
             </div>
-        </div>
+        </section>
+
+
     </div>
     <script src="script.js"></script>
 </body>
